@@ -1,0 +1,1 @@
+<p class="font-label-caps text-label-caps text-surface-dim bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-outline-variant/20">{{ ucfirst($ticket->device_type) }}: {{ $ticket->device_brand }}</p> <!-- ini masih belum diterapkan sekarang -->
