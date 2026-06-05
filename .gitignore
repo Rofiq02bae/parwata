@@ -29,8 +29,7 @@ AGENTS.md
 CLAUDE.md
 LANDINGPAGE.AGENTS.md
 INSTRUCTIONS-1.md
-.agents
-.claude
-.codex
-.kiro
+/.agents
+/.claude
+/.kiro
 opencode.json
