@@ -6,8 +6,9 @@
     <div class="bg-white w-full max-w-full md:max-w-6xl min-h-screen md:min-h-[650px] md:rounded-2xl md:shadow-2xl overflow-hidden flex flex-col md:flex-row my-auto">    
         <div class="w-full md:w-3/5 p-8 sm:p-12 flex flex-col justify-center items-center bg-white">    
             <div class="text-center mb-4">
+                <img src="{{ asset('/logo.png') }}" alt="PARWATA Logo" class="w-12 h-12 mx-auto mb-2">
                 <span class="text-2xl font-black text-blue-600 tracking-tight flex items-center justify-center gap-1">
-                    💻 TECH-FIX
+                    PARWATA
                 </span>
             </div>
 
@@ -63,7 +64,7 @@
                     Laptop rusak & mengganggu kerja?
                 </h3>
                 <p class="text-gray-600 text-sm leading-relaxed">
-                    Tech-Fix membantu kamu mendata kerusakan, memantau proses servis secara langsung, hingga sistem pembayaran yang transparan.
+                    Parwata Digital membantu kamu mendata kerusakan, memantau proses servis secara langsung, hingga sistem pembayaran yang transparan.
                 </p>
             </div>
         </div>
