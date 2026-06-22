@@ -67,11 +67,11 @@ class TicketRepository implements TicketRepositoryInterface
             ->first();
     }
 
-    public function getPendingTickets(): Collection
+    public function getQueuedTickets(): Collection
     {
         return Ticket::query()
             ->with('client')
-            ->where('status', 'pending')
+            ->where('status', 'queued')
             ->latest()
             ->get();
     }
@@ -96,7 +96,7 @@ class TicketRepository implements TicketRepositoryInterface
             ->toArray();
 
         $result = [
-            'pending' => $counts['pending'] ?? 0,
+            'queued' => $counts['queued'] ?? 0,
             'assigned' => $counts['assigned'] ?? 0,
             'in_progress' => $counts['in_progress'] ?? 0,
             'waiting_for_parts' => $counts['waiting_for_parts'] ?? 0,

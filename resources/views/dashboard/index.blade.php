@@ -10,8 +10,8 @@
             <p class="text-2xl font-bold">{{ $stats['total'] }}</p>
         </div>
         <div class="bg-white rounded-lg shadow p-4">
-            <p class="text-sm text-yellow-500">Pending</p>
-            <p class="text-2xl font-bold">{{ $stats['pending'] }}</p>
+            <p class="text-sm text-yellow-500">Queued</p>
+            <p class="text-2xl font-bold">{{ $stats['queued'] }}</p>
         </div>
         <div class="bg-white rounded-lg shadow p-4">
             <p class="text-sm text-blue-500">In Progress</p>

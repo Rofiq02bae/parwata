@@ -47,6 +47,10 @@ class TicketManagementController extends Controller
 
         $this->ticketService->changeStatus($ticket, $newStatus, (int) auth()->id(), $comment);
 
+        if (isset($data['priority'])) {
+            $this->ticketService->updateTicket($ticket, ['priority' => $data['priority']]);
+        }
+
         if (isset($data['admin_notes'])) {
             $this->ticketService->updateTicket($ticket, ['admin_notes' => $data['admin_notes']]);
         }

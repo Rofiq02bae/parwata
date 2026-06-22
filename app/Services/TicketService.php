@@ -42,11 +42,11 @@ class TicketService
     {
         $data['client_id'] = $clientId;
         $data['ticket_code'] = $this->generateTicketCode();
-        $data['status'] = 'pending';
+        $data['status'] = 'queued';
 
         $ticket = $this->repository->create($data);
 
-        $this->createLog($ticket, null, 'pending', 'Ticket created', $clientId);
+        $this->createLog($ticket, null, 'queued', 'Ticket created', $clientId);
 
         return $ticket;
     }
@@ -85,9 +85,9 @@ class TicketService
         return $ticket->refresh();
     }
 
-    public function getPendingTickets(): Collection
+    public function getQueuedTickets(): Collection
     {
-        return $this->repository->getPendingTickets();
+        return $this->repository->getQueuedTickets();
     }
 
     public function getClientStatusCounts(int $clientId): array

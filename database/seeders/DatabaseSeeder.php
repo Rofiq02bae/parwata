@@ -55,14 +55,14 @@ class DatabaseSeeder extends Seeder
             'ticket_id' => $ticket->id,
             'changed_by' => $admin->id,
             'previous_status' => null,
-            'new_status' => 'pending',
+            'new_status' => 'queued',
             'comment' => 'Ticket created',
         ]);
 
         TicketLog::create([
             'ticket_id' => $ticket->id,
             'changed_by' => $admin->id,
-            'previous_status' => 'pending',
+            'previous_status' => 'queued',
             'new_status' => 'assigned',
             'comment' => 'Assigned to John Technician',
         ]);

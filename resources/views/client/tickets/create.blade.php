@@ -18,15 +18,9 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-8">
                 <div>
                     <label for="device_type" class="font-label-caps text-label-caps text-outline mb-2 uppercase tracking-widest block">Device Type</label>
-                    <select name="device_type" id="device_type" required
-                        class="w-full px-4 py-3 bg-white border border-outline-variant/30 rounded-lg text-surface-dim focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-colors">
-                        <option value="">Select Device Type</option>
-                        <option value="laptop" {{ old('device_type') === 'laptop' ? 'selected' : '' }}>Laptop</option>
-                        <option value="desktop" {{ old('device_type') === 'desktop' ? 'selected' : '' }}>Desktop</option>
-                        <option value="printer" {{ old('device_type') === 'printer' ? 'selected' : '' }}>Printer</option>
-                        <option value="monitor" {{ old('device_type') === 'monitor' ? 'selected' : '' }}>Monitor</option>
-                        <option value="other" {{ old('device_type') === 'other' ? 'selected' : '' }}>Other</option>
-                    </select>
+                    <input type="text" name="device_type" id="device_type" value="{{ old('device_type') }}" required
+                        class="w-full px-4 py-3 bg-white border border-outline-variant/30 rounded-lg text-surface-dim placeholder-outline/50 focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-colors"
+                        placeholder="e.g., Keyboard, Mouse, Projector, Laptop">
                 </div>
 
                 <div>
@@ -45,17 +39,6 @@
                         <option value="maintenance" {{ old('service_type') === 'maintenance' ? 'selected' : '' }}>Maintenance</option>
                         <option value="upgrade" {{ old('service_type') === 'upgrade' ? 'selected' : '' }}>Upgrade</option>
                         <option value="diagnosis" {{ old('service_type') === 'diagnosis' ? 'selected' : '' }}>Diagnosis</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label for="priority" class="font-label-caps text-label-caps text-outline mb-2 uppercase tracking-widest block">Priority</label>
-                    <select name="priority" id="priority" required
-                        class="w-full px-4 py-3 bg-white border border-outline-variant/30 rounded-lg text-surface-dim focus:border-electric-blue focus:ring-1 focus:ring-electric-blue outline-none transition-colors">
-                        <option value="low" {{ old('priority') === 'low' ? 'selected' : '' }}>Low</option>
-                        <option value="medium" {{ old('priority') === 'medium' ? 'selected' : '' }} selected>Medium</option>
-                        <option value="high" {{ old('priority') === 'high' ? 'selected' : '' }}>High</option>
-                        <option value="critical" {{ old('priority') === 'critical' ? 'selected' : '' }}>Critical</option>
                     </select>
                 </div>
 

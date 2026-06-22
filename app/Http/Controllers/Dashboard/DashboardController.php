@@ -20,7 +20,7 @@ class DashboardController extends Controller
     {
         $stats = [
             'total' => Ticket::count(),
-            'pending' => Ticket::where('status', 'pending')->count(),
+            'queued' => Ticket::where('status', 'queued')->count(),
             'in_progress' => Ticket::where('status', 'in_progress')->count(),
             'completed' => Ticket::where('status', 'completed')->count(),
             'clients' => User::where('role', 'client')->count(),

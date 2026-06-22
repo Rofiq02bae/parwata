@@ -72,7 +72,7 @@
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
                         <select name="status" class="w-full px-3 py-2 border border-gray-300 rounded-md">
-                            @foreach(['pending', 'assigned', 'in_progress', 'waiting_for_parts', 'ready_for_pickup', 'completed', 'cancelled'] as $status)
+                            @foreach(['queued', 'assigned', 'in_progress', 'waiting_for_parts', 'ready_for_pickup', 'completed', 'cancelled'] as $status)
                                 <option value="{{ $status }}" {{ $ticket->status === $status ? 'selected' : '' }}>
                                     {{ str_replace('_', ' ', ucfirst($status)) }}
                                 </option>

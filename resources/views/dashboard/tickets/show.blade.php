@@ -63,7 +63,7 @@
 
         <div class="space-y-6">
             <div class="bg-white rounded-lg shadow p-6">
-                <h3 class="font-semibold mb-4">Update Status</h3>
+                <h3 class="font-semibold mb-4">Update Status & Priority</h3>
 
                 <form method="POST" action="{{ route('dashboard.tickets.update-status', $ticket->id) }}">
                     @csrf
@@ -72,9 +72,20 @@
                     <div class="mb-4">
                         <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
                         <select name="status" class="w-full px-3 py-2 border border-gray-300 rounded-md">
-                            @foreach(['pending', 'assigned', 'in_progress', 'waiting_for_parts', 'ready_for_pickup', 'completed', 'cancelled'] as $status)
+                            @foreach(['queued', 'assigned', 'in_progress', 'waiting_for_parts', 'ready_for_pickup', 'completed', 'cancelled'] as $status)
                                 <option value="{{ $status }}" {{ $ticket->status === $status ? 'selected' : '' }}>
                                     {{ str_replace('_', ' ', ucfirst($status)) }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Priority</label>
+                        <select name="priority" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                            @foreach(['low', 'medium', 'high', 'critical'] as $priority)
+                                <option value="{{ $priority }}" {{ $ticket->priority === $priority ? 'selected' : '' }}>
+                                    {{ ucfirst($priority) }}
                                 </option>
                             @endforeach
                         </select>
@@ -91,12 +102,12 @@
                     </div>
 
                     <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">
-                        Update Status
+                        Update Status & Priority
                     </button>
                 </form>
             </div>
 
-            @if($ticket->isPending())
+            @if($ticket->isQueued())
                 <div class="bg-white rounded-lg shadow p-6" x-data="{ open: false }">
                     <h3 class="font-semibold mb-4">Assign Technician</h3>
 

@@ -26,7 +26,7 @@ interface TicketRepositoryInterface
 
     public function findByCode(string $code): ?Ticket;
 
-    public function getPendingTickets(): Collection;
+    public function getQueuedTickets(): Collection;
 
     public function getStatusCountsForClient(int $clientId): array;
 

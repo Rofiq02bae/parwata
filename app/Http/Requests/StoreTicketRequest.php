@@ -16,11 +16,10 @@ class StoreTicketRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'device_type' => ['required', 'in:laptop,desktop,printer,monitor,other'],
+            'device_type' => ['required', 'string', 'max:255'],
             'device_brand' => ['required', 'string', 'max:255'],
             'problem_desc' => ['required', 'string'],
             'service_type' => ['required', 'in:repair,maintenance,upgrade,diagnosis'],
-            'priority' => ['required', 'in:low,medium,high,critical'],
         ];
     }
 }

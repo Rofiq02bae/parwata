@@ -44,9 +44,9 @@ class Ticket extends Model
         return $this->hasMany(TicketLog::class);
     }
 
-    public function isPending(): bool
+    public function isQueued(): bool
     {
-        return $this->status === 'pending';
+        return $this->status === 'queued';
     }
 
     public function isCompleted(): bool

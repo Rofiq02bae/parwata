@@ -18,8 +18,8 @@
             <p class="text-2xl font-bold">{{ $counts['completed'] }}</p>
         </div>
         <div class="bg-white rounded-lg shadow p-4">
-            <p class="text-sm text-yellow-500">Pending</p>
-            <p class="text-2xl font-bold">{{ $counts['pending'] }}</p>
+            <p class="text-sm text-yellow-500">Queued</p>
+            <p class="text-2xl font-bold">{{ $counts['queued'] }}</p>
         </div>
     </div>
 
